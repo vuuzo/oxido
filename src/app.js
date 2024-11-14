@@ -39,16 +39,8 @@ const processFile = async (content) => {
         messages: [
           {
             role: "system",
-            content: ` 
-                        Przekształć poniższy artykuł w semantyczny kod HTML, zawierający wyłącznie elementy do umieszczenia wewnątrz <body>. Uwzględnij:
-                        Semantyczne elementy HTML5 takie jak <header>, <main>, <section>, <article>, <footer>, itd.
-                        Obrazy tam, gdzie warto je dodać, w formie tagów <img> z następującymi atrybutami:
-                        - src="image_placeholder.jpg"
-                        - alt z precyzyjnym opisem służącym jako prompt do wygenerowania danego obrazu.
-                        Tagi <figure> otaczające obrazy, z <figcaption> zawierającym opis grafiki.
-                        Uwaga: Zwróć wyłącznie czysty kod w formacie HTML (nie używaj markdown) bez komentarzy ani dodatkowych wyjaśnień.
-                        Kod ma działać po wrzuceniu go wewnątrz <body>.
-                        `,
+            content:
+              'Przekształć podany artykuł w semantyczny kod HTML5, zawierający wyłącznie elementy do umieszczenia wewnątrz <body>. Zastosuj następujące zasady:\n\n1. Wykorzystuj semantyczne elementy HTML5, takie jak <header>, <main>, <section>, <article>, <footer>.\n2. Dodaj obrazy tam, gdzie pasują, używając tagów <img> z atrybutami:\n   - src="image_placeholder.jpg"\n   - alt z dokładnym opisem jako prompt dla obrazu.\n3. Obrazy otaczaj tagiem <figure>, a opis umieszczaj w <figcaption>.\n\nZwróć wyłącznie czysty kod HTML. Unikaj bloków markdown, komentarzy i dodatkowego tekstu. Odpowiedź ma być gotowa do umieszczenia wewnątrz <body>.',
           },
           { role: "user", content: content },
         ],
