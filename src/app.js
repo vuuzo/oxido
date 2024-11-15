@@ -24,7 +24,7 @@ const readFile = () => {
 const saveToHTML = (content) => {
   try {
     fs.writeFileSync(output, content, "utf8");
-    console.log(`Saved in: ${output}`);
+    console.log(`Zapisano w ${output}`);
   } catch (e) {
     console.error("Nie udalo sie utworzyc pliku: ", e.message);
   }
